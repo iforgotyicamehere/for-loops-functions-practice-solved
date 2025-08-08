@@ -1,17 +1,26 @@
+/*
+ * EXERCISE 3
+ * Make sure to solve two parts beneath
+ */
 
-// EXERCISE 3
-// Make sure to solve two parts beneath
 
 /** 
  * PART 1
  * Return the average value for the given array of numbers.
- * Example: getAverage([22, 45, 4, 65]) => 34
- * */
+ */
+
 
 export function getAverage(array) {
   // Your code goes here...
-
+   if (!Array.isArray(array) || array.length === 0) return 0; // safe default for empty/bad input
+  let sum = 0;                           
+  for (let i = 0; i < array.length; i++) {
+    sum += array[i];                     
+  }
+  return sum / array.length;             
 }
+
+
 
 
 /** 
@@ -23,7 +32,15 @@ export function getAverage(array) {
 
 export function getStringSum(str) {
   // Your code goes here...
-
+ let sum = 0;                           
+  for (let i = 0; i < str.length; i++) {
+    const ch = str[i];
+    if (ch >= '0' && ch <= '9') {        
+      sum += ch.charCodeAt(0) - 48;      
+      // alternatively: sum += Number(ch);
+    }
+  }
+  return sum;                          
 }
 
 
